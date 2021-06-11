@@ -39,7 +39,9 @@ const Posts = () => {
                 {item.score} points by {item.by}
               </span>
               <span> | </span>
-              <a className="link"> {item.descendants} comments</a>
+              <Link to={`/comments/${item.id}`} className="link">
+                {item.descendants} comments
+              </Link>
             </td>
           </tr>
         </React.Fragment>
@@ -53,9 +55,9 @@ const Posts = () => {
         <tbody>{renderedList()}</tbody>
       </table>
       <div className="footer">
-        <Link to="/2">
+        {/* <Link to={`posts/${}`}>
           <button id="btn_next">Next</button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
