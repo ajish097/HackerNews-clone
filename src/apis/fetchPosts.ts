@@ -11,14 +11,14 @@ const fetchPosts = async (pageID: number = 1) => {
   const { start, end } = getRange(pageID, topPostIds.data);
   const postIDs: number[] = topPostIds.data.slice(start, end);
   postIDs.forEach((postID) => {
-    getPostsPromiseArray.push(getPostData(postID));
+    getPostsPromiseArray = [...getPostsPromiseArray, getPostData(postID)];
   });
 
   await Promise.all(getPostsPromiseArray)
     .then((response: Item[]) => {
       response.forEach((post: any, idx: number) => {
         post.data.postId = idx + 1;
-        postsData.push(post.data);
+        postsData = [...postsData, post.data];
       });
     })
     .catch((error) => {

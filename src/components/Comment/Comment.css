@@ -1,0 +1,24 @@
+ul, li {
+    list-style-type: none ;
+    border-radius: 5px ;
+    font-size: 9pt;
+    font-family: Verdana, Geneva, sans-serif;
+    overflow: auto;
+}
+
+ul{
+    margin: .3%;
+}
+
+
+#content {
+    background-color: rgb(236, 232, 206);
+    border-radius: 5px;
+}
+
+p {
+    margin: 5px;
+    font-size: 9pt;
+    font-family: Verdana, Geneva, sans-serif;
+    display: inline-block
+}
