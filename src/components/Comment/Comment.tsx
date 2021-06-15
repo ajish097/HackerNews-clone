@@ -4,10 +4,11 @@ import "./Comment.css";
 const Comment = (props) => {
     function createMarkup(comment) {
         return {__html: comment.text};
-      }
+    }
     return (
-        props.comments.map( comment => {
+        props.comments.map(comment => {
             return (
+                <React.Fragment key={comment.id} >
                 <ul>
                     <li>
                     <ul id="content">
@@ -22,6 +23,7 @@ const Comment = (props) => {
                     </ul>
                     </li>
                 </ul>
+                </React.Fragment>
             )
         })
     )

@@ -8,13 +8,15 @@ const fetchComments = async (Id: number, setComments) => {
 };
 
 const makeCall = async (comments: Array<Item>, list: number[], setComments) => {
-  if (list && list.length == 0) return;
+  if (!list || list.length == 0) return;
 
-  for (let i = 0; i < list?.length; i++) {
+  for (let i = 0; i < list.length; i++) {
     let response: any = await getPostData(list[i]);
-    comments.push(response.data);
-    setComments([...comments])
-    makeCall(comments, response?.data?.kids, setComments);
+    if(response?.data) {
+      comments.push(response.data);
+      makeCall(comments, response.data.kids, setComments);
+      setComments([...comments])
+    }
   }
 };
 

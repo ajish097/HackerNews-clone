@@ -4,7 +4,7 @@ import ENDPOINTS from "./endpoints";
 
 const pagePerPost: number = 20;
 
-const fetchPosts = async (pageID: number = 1) => {
+const fetchPosts = async (pageID: number) => {
   let postsData: Array<Item> = [];
   let getPostsPromiseArray: Array<Promise<Item>> = [];
   const topPostIds: any = await axios.get(ENDPOINTS.topStories);
@@ -16,8 +16,8 @@ const fetchPosts = async (pageID: number = 1) => {
 
   await Promise.all(getPostsPromiseArray)
     .then((response: Item[]) => {
-      response.forEach((post: any, idx: number) => {
-        post.data.postId = idx + 1;
+      response.forEach((post: any) => {
+        
         postsData = [...postsData, post.data];
       });
     })
