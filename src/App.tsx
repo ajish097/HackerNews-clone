@@ -2,8 +2,8 @@ import "./styles.css";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Header from "./components/header/Header";
-import Posts from "./components/posts/Posts";
+import Header from "./components/Header/Header";
+import Posts from "./components/Posts/Posts";
 import CommentSection from "./components/CommentSection/CommentSection";
 
 export default function App() {
