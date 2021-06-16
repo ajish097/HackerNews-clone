@@ -23,4 +23,4 @@ You can check out the demo here -- [Demo](https://elastic-albattani-00d438.netli
 
 ### Development server
 
-Run `npm run start` for a dev server. Navigate to `http://localhost:3000/`.
+Run `npm run start` for a dev server. Navigate to `http://localhost:3000/`. 
